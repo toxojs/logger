@@ -22,6 +22,7 @@ function setDefaultLoggerOptions(options) {
 
 function createLogger(name, options = defaultOptions) {
   const logger = pino(options);
+  logger.log = logger.info;
   loggers.set(name, logger);
   return logger;
 }
